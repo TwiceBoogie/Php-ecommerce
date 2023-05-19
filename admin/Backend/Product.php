@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Product class
- */
 class Product
 {
 
@@ -10,22 +7,13 @@ class Product
 
     private $validator;
 
-    /**
-     * Class constructor
-     * @param Database $db
-     * @param Validator $validator
-     */
     public function __construct(Database $db, Validator $validator)
     {
         $this->db = $db;
         $this->validator = $validator;
     }
 
-    /**
-     * Get all product details
-     * @param $productId int product's id.
-     * @return array Product details or null if product with given id doesn't exist.
-     */
+
     public function getAll($productId)
     {
         $query = "SELECT * FROM `products` WHERE `product_id` = :id";
@@ -35,10 +23,6 @@ class Product
         return count($result) > 0 ? $result[0] : null;
     }
 
-    /**
-     * Add new product using data provided by either admin or manager.
-     * @param $data array All data filled in "Add Product" form.
-     */
     public function add($data)
     {
         if ($errors = $this->validateInput($data)) {
@@ -87,11 +71,6 @@ class Product
         ));
     }
 
-    /**
-     * Validate admin/manager provided fields.
-     * @param $data array Admin/Manager provided fields
-     * @return array Array with errors if there are some, empty array otherwise.
-     */
     public function validateInput($data)
     {
         $errors = array();
@@ -161,10 +140,6 @@ class Product
         return $errors;
     }
 
-    /**
-     * Delete product
-     * @param $productId.
-     */
     public function deleteProduct($productId)
     {
         $this->db->delete("products", "product_id = :id", array("id" => $productId));

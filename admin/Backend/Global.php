@@ -14,7 +14,6 @@ $container = new Pimple\Container();
 $container['db'] = function () {
     try {
         $db = new Database(DB_TYPE, DB_HOST, DB_NAME, DB_USER, DB_PASS);
-        $db->debug(true);
         return $db;
     } catch (PDOException $e) {
         die('Connection failed: ' . $e->getMessage());

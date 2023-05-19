@@ -1,8 +1,5 @@
 <?php
 
-/**
- * User class.
- */
 class User
 {
 
@@ -14,14 +11,6 @@ class User
 
     private $registrator;
 
-    /**
-     * Class constructor
-     * @param Database $db
-     * @param PasswordHasher $hasher
-     * @param Validator $validator
-     * @param Login $login
-     * @param Register $registrator
-     */
     public function __construct(
         Database $db,
         PasswordHasher $hasher,
@@ -34,11 +23,6 @@ class User
         $this->registrator = $registrator;
     }
 
-    /**
-     * Get all user details, request comes from admin
-     * @param $userId int User's id.
-     * @return array User details or null if user with given id doesn't exist.
-     */
     public function getAll($userId)
     {
         $query = "SELECT `users`.`user_name`, `users`.`user_email`, `user_details`.*
@@ -51,10 +35,6 @@ class User
         return count($result) > 0 ? $result[0] : null;
     }
 
-    /**
-     * Add new user using data provided by administrator from admin panel.
-     * @param $data array All data filled in administrator's "Add User" form
-     */
     public function add($data)
     {
         if ($errors = $this->registrator->validateUser($data)) {
@@ -81,11 +61,6 @@ class User
         ));
     }
 
-    /**
-     * Update user's details.
-     * @param $userId int User's id.
-     * @param $data array User data.
-     */
     public function updateUser($userId, array $data)
     {
         $currInfo = $this->getInfo($userId);
@@ -120,22 +95,11 @@ class User
         ));
     }
 
-    /**
-     * Check if user with provided id is admin.
-     * @param $userId User's id.
-     * @return bool TRUE if user is admin, FALSE otherwise.
-     */
     public function isAdmin($userId)
     {
         return $userId && strtolower($this->getRole($userId)) === "admin";
     }
 
-    /**
-     * Updates user's password.
-     *
-     * @param $userId
-     * @param array $data
-     */
     public function updatePassword($userId, array $data)
     {
         if ($errors = $this->validatePasswordUpdate($userId, $data)) {
@@ -154,11 +118,6 @@ class User
         ));
     }
 
-    /**
-     * @param $userId
-     * @param array $data
-     * @return array
-     */
     private function validatePasswordUpdate($userId, array $data)
     {
         $errors = array();
@@ -197,12 +156,6 @@ class User
         return $errors;
     }
 
-    /**
-     * Changes user's role. If user's role was editor it will be set to user and vice versa.
-     * @param $userId int User's id.
-     * @param $role int New user's role.
-     * @return string New user role.
-     */
     public function changeRole($userId, $role)
     {
         $result = $this->db->select(
@@ -223,11 +176,6 @@ class User
         return ucfirst(strtolower($result[0]['role_name']));
     }
 
-    /**
-     * Get current user's role.
-     * @param $userId
-     * @return string Current user's role.
-     */
     public function getRole($userId)
     {
         $result = $this->db->select(
@@ -241,11 +189,6 @@ class User
         return $result[0]['role'];
     }
 
-    /**
-     * Get basic user info.
-     * @param $userId int User's unique id.
-     * @return array User info array.
-     */
     public function getInfo($userId)
     {
         $result = $this->db->select(
@@ -256,12 +199,6 @@ class User
         return count($result) > 0 ? $result[0] : null;
     }
 
-    /**
-     * Updates user info.
-     * @param $userId int User's unique id.
-     * @param array $data Associative array where keys are database fields that need
-     * to be updated.
-     */
     public function updateInfo($userId, $data)
     {
         $this->db->update(
@@ -272,11 +209,6 @@ class User
         );
     }
 
-    /**
-     * Get user details (City, Address and Phone)
-     * @param $userId int User's id.
-     * @return array User details array.
-     */
     public function getDetails($userId)
     {
         $result = $this->db->select(
@@ -297,12 +229,6 @@ class User
     }
 
 
-    /**
-     * Updates user details.
-     *
-     * @param $userId int The ID of the user to update.
-     * @param array $details Associative array where keys are database fields.
-     */
     public function updateDetails($userId, $details)
     {
         $currDetails = $this->getDetails($userId);
@@ -335,12 +261,6 @@ class User
         $this->db->delete("user_details", "user_id = :id", array("id" => $userId));
     }
 
-    /**
-     * Validate data provided during user update
-     * @param $userInfo
-     * @param $data
-     * @return array
-     */
     private function validateUserUpdate($userInfo, $data)
     {
         $errors = array();
@@ -374,11 +294,6 @@ class User
         return $errors;
     }
 
-    /**
-     * Hash provided password.
-     * @param string $password Password that needs to be hashed.
-     * @return string Hashed password.
-     */
     private function hashPassword($password)
     {
         return $this->hasher->hashPassword($password);

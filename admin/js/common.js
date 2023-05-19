@@ -1,19 +1,9 @@
-/**
- * Append success message to provided parent element.
- * @param {Object} parentElement Parent element where message will be appended.
- * @param {String} message Message to be displayed.
- */
 HelpModules.Util.displaySuccessMessage = function (parentElement, message) {
   $(".alert-success").remove();
   var div = "<div class='alert alert-success mb-3'>" + message + "</div>";
   parentElement.prepend(div);
 };
 
-/**
- * Append error message to an input element. If message is omitted, it will be set to empty string.
- * @param {Object} element Input element on which error message will be appended.
- * @param {String} message Message to be displayed.
- */
 HelpModules.Util.displayErrorMessage = function (element, message) {
   element.addClass("is-invalid").removeClass("is-valid");
 
@@ -22,19 +12,11 @@ HelpModules.Util.displayErrorMessage = function (element, message) {
   }
 };
 
-/**
- * Removes all error messages from all input fields.
- */
 HelpModules.Util.removeErrorMessages = function () {
   $("form input").removeClass("is-invalid").removeClass("is-valid");
   $(".invalid-feedback").remove();
 };
 
-/**
- * Show errors received from the server.
- * @param form
- * @param error
- */
 HelpModules.Util.showFormErrors = function (form, error) {
   $.each(error.responseJSON.errors, function (key, error) {
     HelpModules.Util.displayErrorMessage(
@@ -44,24 +26,10 @@ HelpModules.Util.showFormErrors = function (form, error) {
   });
 };
 
-/**
- * Hash a given value using SHA512 hashing algorithm.
- * @param value
- * @returns {string}
- */
 HelpModules.Util.hash = function (value) {
   return value.length ? CryptoJS.SHA512(value).toString() : "";
 };
 
-/**
- * Submit a specified form using AJAX.
- *
- * @param form A form object.
- * @param data JSON data to be sent via the AJAX request.
- * @param success Success callback.
- * @param error Error callback.
- * @param complete Complete callback.
- */
 HelpModules.Http.submit = function (form, data, success, error, complete) {
   HelpModules.Util.removeErrorMessages();
 
@@ -90,14 +58,6 @@ HelpModules.Http.submit = function (form, data, success, error, complete) {
   });
 };
 
-/**
- * Make a HTTP POST request via AJAX.
- *
- * @param data JSON data to be sent via the AJAX request.
- * @param success Success callback.
- * @param error Error callback.
- * @param complete Complete callback.
- */
 HelpModules.Http.post = function (data, success, error, complete) {
   $.ajax({
     url: "Backend/Ajax.php",

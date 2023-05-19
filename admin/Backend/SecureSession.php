@@ -1,28 +1,14 @@
 <?php
 
-/**
- * SecureSession class
- */
 class SecureSession
 {
-    /**
-     * Start session.
-     *
-     * @return void;
-     */
     public static function startSession()
     {
         session_start();
     }
 
-    /**
-     * Destroy session.
-     *
-     * @return void;
-     */
     public static function destroySession()
     {
-        $_SESSION = array();
 
         $params = session_get_cookie_params();
 
@@ -39,34 +25,16 @@ class SecureSession
         session_destroy();
     }
 
-    /**
-     * Regenerates session id.
-     *
-     * @param bool $deleteOldSession
-     * @return bool
-     */
     public static function regenerate($deleteOldSession = true)
     {
         return session_regenerate_id($deleteOldSession);
     }
 
-    /**
-     * Set session data.
-     *
-     * @param mixed $key Key that will be used to store value.
-     * @param mixed $value Value that will be stored.
-     * @return null;
-     */
     public static function set($key, $value)
     {
         $_SESSION[$key] = $value;
     }
 
-    /**
-     * Unset session data with provided key.
-     * 
-     * @param $key
-     */
     public static function destroy($key)
     {
         if (isset($_SESSION[$key])) {
@@ -74,14 +42,6 @@ class SecureSession
         }
     }
 
-    /**
-     * Get data from $_SESSION variable.
-     * 
-     * @param string $key Key used to get data from session.
-     * @param mixed $default This will be returned if there is no record inside
-     * session for given key.
-     * @return mixed Session value for given key.
-     */
     public static function get($key, $default = null)
     {
         if (isset($_SESSION[$key])) {

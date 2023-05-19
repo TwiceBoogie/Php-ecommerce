@@ -1,8 +1,6 @@
 <?php
 
-/**
- * User registration class.
- */
+
 class Register
 {
 
@@ -12,12 +10,6 @@ class Register
 
     private $hasher;
 
-    /**
-     * Class constructor
-     * @param Database $db
-     * @param Validator $validator
-     * @param PasswordHasher $hasher
-     */
     public function __construct(
         Database $db,
         Validator $validator,
@@ -28,12 +20,6 @@ class Register
         $this->hasher = $hasher;
     }
 
-    /**
-     * Register user.
-     * 
-     * @param array $data User details.
-     * @throws Exception
-     */
     public function register($data)
     {
         //validate provided data
@@ -66,24 +52,11 @@ class Register
         ));
     }
 
-    /**
-     * Hash a given password.
-     *
-     * @param string $password Un-hashed password.
-     * @return string Hashed password.
-     */
     public function hashPassword($password)
     {
         return $this->hasher->hashPassword($password);
     }
 
-    /**
-     * Validate user provided fields.
-     * 
-     * @param $data array User provided fields and id's of those fields that will be
-     * used for displaying error messages on client side.
-     * @return array Array with errors if there are some, empty array otherwise.
-     */
     public function validateUser($data)
     {
         $errors = array();

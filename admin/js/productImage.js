@@ -1,6 +1,3 @@
-/**
- * Show product details modal.
- */
 $(".product-details").click(function (e) {
   var productID = $(this).data("item");
   $(".add-image")

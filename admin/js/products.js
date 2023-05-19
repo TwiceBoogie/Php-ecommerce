@@ -50,10 +50,6 @@ $("#add-product-form").validate({
   },
 });
 
-/**
- * Builds the create/update product form data.
- * @param form
- */
 function getProductFormData(form) {
   return {
     action: editItemMode ? "updateProduct" : "addProduct",
@@ -68,9 +64,6 @@ function getProductFormData(form) {
   };
 }
 
-/**
- * Show edit product modal.
- */
 $(".edit-product").click(function () {
   HelpModules.Util.removeErrorMessages();
   itemId = $(this).data("item");
@@ -110,10 +103,6 @@ $(".edit-product").click(function () {
   );
 });
 
-/**
- * Delete product button handler. Sends an AJAX request
- * to remove the specified product from the system.
- */
 $(".delete-product").click(function () {
   if (!confirm("Are You Sure?")) return;
 

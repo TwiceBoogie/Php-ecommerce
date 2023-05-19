@@ -1,8 +1,5 @@
 <?php
-// echo __DIR__ . '/../uploads';
-/**
- * Upload class
- */
+
 class Upload
 {
 
@@ -10,11 +7,6 @@ class Upload
 
     private $validator;
 
-    /**
-     * Class constructor
-     * @param Database $db
-     * @param Validator
-     */
     public function __construct(
         Database $db,
         Validator $validator
@@ -23,13 +15,6 @@ class Upload
         $this->validator = $validator;
     }
 
-    /**
-     * Extract the file uploaded to the temp server and upload to uploads directory
-     * and database.
-     * @param $table The table that will be uploaded to.
-     * @param $id The ID to which user/product the image belongs to
-     * @param $file The file that will be uploaded.
-     */
     public function uploadImage($table, $id, $file)
     {
         $errors = array();

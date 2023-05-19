@@ -2,9 +2,6 @@ var activeUser = null,
   editUserMode = false;
 
 $(document).ready(function () {
-  /**
-   * Initialize datatables and hide the ajax loader.
-   */
   $("#users-list").dataTable({
     initComplete: function () {
       $("#loading-users").remove();
@@ -13,9 +10,6 @@ $(document).ready(function () {
   });
 });
 
-/**
- * Change role button click.
- */
 $(".change-role").click(function () {
   activeUser = $(this).data("user");
 
@@ -23,9 +17,6 @@ $(".change-role").click(function () {
   $("#select-user-role").val($(this).data("role"));
 });
 
-/**
- * Makes an AJAX call to change the role of a specific user.
- */
 $("#change-role-button").click(function () {
   HelpModules.Http.post(
     {
@@ -41,9 +32,6 @@ $("#change-role-button").click(function () {
   );
 });
 
-/**
- * Shows the create user modal.
- */
 $("#btn-show-user-modal").click(function () {
   HelpModules.Util.removeErrorMessages();
   activeUser = null;
@@ -59,9 +47,6 @@ $("#btn-show-user-modal").click(function () {
   $("#btn-add-user").text("Add");
 });
 
-/**
- * Validate and submit the create/update user form.
- */
 $("#add-user-form").validate({
   rules: {
     email: {
@@ -92,10 +77,6 @@ $("#add-user-form").validate({
   },
 });
 
-/**
- * Builds the create/update user form data.
- * @param form
- */
 function getUserFormData(form) {
   return {
     action: editUserMode ? "updateUser" : "addUser",
@@ -112,9 +93,6 @@ function getUserFormData(form) {
   };
 }
 
-/**
- * Show edit user modal.
- */
 $(".edit-user").click(function () {
   HelpModules.Util.removeErrorMessages();
   activeUser = $(this).data("user");
@@ -157,9 +135,6 @@ $(".edit-user").click(function () {
   );
 });
 
-/**
- * Show user details modal.
- */
 $(".user-details").click(function () {
   var $modalTitle = $("#modal-user-details .modal-title"),
     $modalBody = $("#modal-user-details .modal-body"),
@@ -191,10 +166,6 @@ $(".user-details").click(function () {
   );
 });
 
-/**
- * Delete user button handler. Sends an AJAX request
- * to remove the specified user from the system.
- */
 $(".delete-user").click(function () {
   if (!confirm("Are You Sure?")) return;
 

@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Role class
- */
 class Role
 {
 
@@ -10,22 +7,12 @@ class Role
 
     private $validator;
 
-    /**
-     * Class constructor
-     * @param Database $db
-     * @param Validator $validator
-     */
     public function __construct(Database $db, Validator $validator)
     {
         $this->db = $db;
         $this->validator = $validator;
     }
 
-    /**
-     * Get role id of role that have provided role name.
-     * @param $name string Role name
-     * @return int Role id if role with provided role name exist, null otherwise.
-     */
     public function getId($name)
     {
         $result = $this->db->select(
@@ -38,10 +25,6 @@ class Role
             : null;
     }
 
-    /**
-     * Add new role into db.
-     * @param $name string Role name
-     */
     public function add($name)
     {
         if ($this->validator->roleExist($name)) {
@@ -62,10 +45,6 @@ class Role
         ));
     }
 
-    /**
-     * Delete role with provided id.
-     * @param $id int Role id
-     */
     public function delete($id)
     {
         //default user roles can't be deleted

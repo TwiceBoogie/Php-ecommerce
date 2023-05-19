@@ -1,36 +1,14 @@
 <?php
 
-/**
- * Class Database
- */
+
 class Database extends PDO
 {
-    protected $debug = false;
-
 
     public function __construct($type, $host, $databaseName, $username, $password)
     {
         parent::__construct($type . ':host=' . $host . ';dbname=' . $databaseName . ';charset=utf8mb4', $username, $password);
         $this->exec('SET CHARACTER SET utf8mb4');
     }
-
-    public function debug($debug)
-    {
-        $this->debug = $debug;
-
-        if ($debug) {
-            $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        } else {
-            $this->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
-        }
-    }
-
-
-    public function getDebug()
-    {
-        return $this->debug;
-    }
-
 
     public function select($sql, $array = array(), $fetchMode = PDO::FETCH_ASSOC)
     {

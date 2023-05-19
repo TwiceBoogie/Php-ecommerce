@@ -1,8 +1,5 @@
 <?php
 
-/**
- * Response class.
- */
 class Response
 {
     protected $statuses = array(

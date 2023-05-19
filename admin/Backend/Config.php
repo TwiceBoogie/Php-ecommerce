@@ -13,8 +13,6 @@ define('DB_PASS', 'password');
 define('DB_NAME', 'dbname');
 
 
-//LOGIN CONFIGURATION
-define('SUCCESS_LOGIN_REDIRECT', serialize(array('default' => "index.php", 'system_workers' => "index.php")));
 
 //PASSWORD CONFIGURATION
 define('PASSWORD_ENCRYPTION', "bcrypt");
