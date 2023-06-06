@@ -97,8 +97,9 @@ The entire backend is in admin, disregard the server directory
    composer install
    ```
 3. Configure the project in `admin/Backend/Config.php`
-4. Create the database and make sure to import the database schema using the provided SQL file. _(Note: when you create a new account, make sure to change the users role in MySQL to admin in order to access admin features)_
-5. Start a local PHP development server:
+4. Create the database and make sure to import the database schema using the provided SQL file. _(Note: when you create a new account, make sure to change the users role in (`users` table) MySQL to admin (`1`) in order to access admin features)_
+5. Make sure to change back into the root dir.
+6. Start a local PHP development server:
    ```
    php -S localhost:8000
    ```
