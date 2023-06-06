@@ -91,13 +91,14 @@ The entire backend is in admin, disregard the server directory
    https://github.com/TwiceBoogie/Php-ecommerce.git
    ```
 
-2. Install dependencies using Composer:
+2. CD into admin/ and install dependencies using Composer:
    ```
+   cd admin
    composer install
    ```
 3. Configure the project in `admin/Backend/Config.php`
 4. Create the database and make sure to import the database schema using the provided SQL file. _(Note: when you create a new account, make sure to change the users role in MySQL to admin in order to access admin features)_
 5. Start a local PHP development server:
    ```
-   php -S localhost:8000 -t public
+   php -S localhost:8000
    ```
