@@ -91,8 +91,9 @@ The entire backend is in admin, disregard the server directory
    https://github.com/TwiceBoogie/Php-ecommerce.git
    ```
 
-2. Install dependencies using Composer:
+2. CD into admin/ and install dependencies using Composer:
    ```
+   cd admin
    composer install
    ```
 3. Configure the project in `admin/Backend/Config.php`
