@@ -3,14 +3,14 @@
 define('WEBSITE_NAME', 'Evolve Tech');
 define('WEBSITE_DOMAIN', 'http://localhost/');
 
-define('SCRIPT_URL', 'http://localhost/php-ecommerce');
+define('SCRIPT_URL', 'http://localhost:8000');
 
 
 define('DB_HOST', 'localhost');
 define('DB_TYPE', 'mysql');
-define('DB_USER', 'username');
-define('DB_PASS', 'password');
-define('DB_NAME', 'dbname');
+define('DB_USER', '<username>');
+define('DB_PASS', '<password>');
+define('DB_NAME', '<db name>');
 
 
 
