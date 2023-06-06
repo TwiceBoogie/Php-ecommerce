@@ -99,5 +99,5 @@ The entire backend is in admin, disregard the server directory
 4. Create the database and make sure to import the database schema using the provided SQL file. _(Note: when you create a new account, make sure to change the users role in MySQL to admin in order to access admin features)_
 5. Start a local PHP development server:
    ```
-   php -S localhost:8000 -t public
+   php -S localhost:8000
    ```
