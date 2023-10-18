@@ -4,6 +4,7 @@ class Upload
 {
 
     private $db;
+    private $mtype;
 
     private $validator;
 

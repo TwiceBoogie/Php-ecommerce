@@ -38,3 +38,13 @@ function app($service = null)
 
     return $c[$service];
 }
+
+function wait_for($hostname, $port, $timeout = 30)
+{
+    $start = time();
+    $connection = false;
+
+    while (time() < $start + $timeout && !$connection) {
+        $connection = fsockopen($hostname, intval($port));
+    }
+}

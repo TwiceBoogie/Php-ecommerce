@@ -66,7 +66,7 @@ HelpModules.Http.submit = function (form, data, success, error, complete) {
   HelpModules.Util.removeErrorMessages();
 
   $.ajax({
-    url: "admin/Backend/Ajax.php",
+    url: "backend/Ajax.php",
     type: "POST",
     dataType: "JSON",
     data: data,
@@ -100,7 +100,7 @@ HelpModules.Http.submit = function (form, data, success, error, complete) {
  */
 HelpModules.Http.post = function (data, success, error, complete) {
   $.ajax({
-    url: "Backend/Ajax.php",
+    url: "backend/Ajax.php",
     type: "POST",
     dataType: "json",
     data: data,

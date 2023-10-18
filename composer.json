@@ -5,11 +5,11 @@
   },
   "autoload": {
     "classmap": [
-      "Backend"
+      "backend"
     ],
     "files": [
-      "Backend/Config.php",
-      "Backend/HelperFunctions.php"
+      "backend/Config.php",
+      "backend/HelperFunctions.php"
     ]
   }
 }

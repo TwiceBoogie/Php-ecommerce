@@ -1,5 +1,5 @@
 <?php
-include 'Backend/Global.php';
+include '../backend/Global.php';
 
 if (!app('login')->isLoggedIn()) {
     redirect('login.php');

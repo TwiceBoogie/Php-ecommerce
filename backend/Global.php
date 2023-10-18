@@ -1,14 +1,14 @@
 <?php
 
-include_once 'Upload.php';
-include_once 'Product.php';
+include_once dirname(__FILE__) . "/../vendor/autoload.php";
 
-include_once dirname(__FILE__) . '/../vendor/autoload.php';
+
+// use \Pimple\Container;
 
 SecureSession::startSession();
-
 // Pimple allows you to wire together an object and all of its recursive dependencies ONCE, 
 // and then use that object multiple places by simple calling that object.
+// $container = new Pimple\Container();
 $container = new Pimple\Container();
 
 $container['db'] = function () {

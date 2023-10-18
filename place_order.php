@@ -1,7 +1,5 @@
 <?php
 
-include_once '../admin/Backend/Global.php';
-
 if (!app('login')->isLoggedIn()) {
     redirect('checkout.php');
 }

@@ -2,6 +2,7 @@
 
 include('layouts/header.php');
 
+
 if (app('login')->isLoggedIn()) {
   redirect('account.php');
 }

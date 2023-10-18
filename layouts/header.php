@@ -1,5 +1,6 @@
 <?php
-include 'admin/Backend/Global.php';
+include("backend/Global.php");
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -44,7 +45,7 @@ include 'admin/Backend/Global.php';
           <li class="nav-item">
             <a class="nav-link" href="contact.php">Contact Us</a>
           </li>
-            <?php if (SecureSession::get('user_id') !== null && app('user')->isAdmin(SecureSession::get('user_id'))) : ?>
+          <?php if (SecureSession::get('user_id') !== null && app('user')->isAdmin(SecureSession::get('user_id'))) : ?>
             <li class="nav-item">
               <a class="nav-link" href="admin/users.php">Admin Panel</a>
             </li>
