@@ -1,6 +1,6 @@
 <?php
 
-include 'admin/Backend/Global.php';
+include 'backend/Global.php';
 
 SecureSession::destroySession();
 

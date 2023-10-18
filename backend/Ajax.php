@@ -1,5 +1,7 @@
 <?php
 
+include_once 'Global.php';
+
 $action = $_POST['action'];
 
 switch ($action) {
