@@ -2,7 +2,7 @@
 include '../backend/Global.php';
 
 if (!app('login')->isLoggedIn()) {
-    redirect('login.php');
+    redirect('/login');
 }
 
 $currentUser = app('current_user');
@@ -40,12 +40,12 @@ $currentUser = app('current_user');
             <hr />
             <ul class="nav nav-pills flex-column mb-auto mt-4">
                 <li>
-                    <a href="./users.php" class="nav-link text-white <?= $site == 'Users' ? 'active' : '' ?>">
+                    <a href="./users" class="nav-link text-white <?= $site == 'Users' ? 'active' : '' ?>">
                         System Users
                     </a>
                 </li>
                 <li>
-                    <a href="./products.php" class="nav-link text-white <?= $site == 'Products' ? 'active' : '' ?>">
+                    <a href="./products" class="nav-link text-white <?= $site == 'Products' ? 'active' : '' ?>">
                         Products
                     </a>
                 </li>
@@ -57,7 +57,7 @@ $currentUser = app('current_user');
                     <strong><?= ucfirst($currentUser->role_name) ?></strong>
                 </a>
                 <ul class="dropdown-menu dropdown-menu-dark text-small shadow" aria-labelledby="dropdownUser1">
-                    <li><a class="dropdown-item" href="../index.php">Go back to website?</a></li>
+                    <li><a class="dropdown-item" href="/">Go back to website?</a></li>
                 </ul>
             </div>
         </div>

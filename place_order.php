@@ -1,7 +1,7 @@
 <?php
 
 if (!app('login')->isLoggedIn()) {
-    redirect('checkout.php');
+    redirect('checkout');
 }
 
 
@@ -68,7 +68,7 @@ if (isset($_POST['place_order'])) {
     }
     $msg = array(
         "order_status" => "Order Placed Successfully",
-        "page" => "payment.php",
+        "page" => "payment",
     );
     echo json_encode($msg);
     exit;

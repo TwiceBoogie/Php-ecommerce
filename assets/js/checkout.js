@@ -22,7 +22,7 @@ $("#checkout-form").validate({
       var data = { place_order: "Place Order" };
       setTimeout(function () {
         $.ajax({
-          url: "place_order.php",
+          url: "place_order",
           type: "POST",
           dataType: "json",
           data: data,

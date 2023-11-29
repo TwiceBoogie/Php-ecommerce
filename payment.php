@@ -13,7 +13,7 @@ if (isset($_POST['order_pay_btn'])) {
     <div class="container text-center mt-3 pt-5">
         <h2 class="form-weight-bold">Order Placed Successfully</h2>
         <hr class="mx-auto">
-        <a href="account.php#orders"><input class="btn btn-primary" type="submit" value="Your Orders" /></a>
+        <a href="account#orders"><input class="btn btn-primary" type="submit" value="Your Orders" /></a>
     </div>
 </section>
 

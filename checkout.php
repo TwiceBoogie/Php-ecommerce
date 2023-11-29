@@ -3,7 +3,7 @@ include('layouts/header.php');
 
 if (!app('login')->isLoggedIn()) {
     echo '<script>alert("You Need to Login to Checkout");</script>';
-    redirect('login.php');
+    redirect('login');
 }
 
 if (!empty($_SESSION['cart'])) {
@@ -17,7 +17,7 @@ if (!empty($_SESSION['cart'])) {
 } else {
 
     //If cart is empty,send user to home page
-    redirect("index.php");
+    redirect("/");
 }
 
 ?>

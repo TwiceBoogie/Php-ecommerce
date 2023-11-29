@@ -19,8 +19,8 @@ $products = app('db')->select(
 
     <?php foreach ($products as $product) : ?>
 
-      <div onclick="window.location.href='single_product.php?product_id=<?= $product['product_id']; ?>';" class="product text-center col-lg-3 col-md-4 col-sm-12">
-        <a href="single_product.php?product_id=<?= $product['product_id'] ?>"><img class="img-fluid mb-3" src="assets/imgs/<?= $product['product_image']; ?>" /></a>
+      <div onclick="window.location.href='single_product?product_id=<?= $product['product_id']; ?>';" class="product text-center col-lg-3 col-md-4 col-sm-12">
+        <a href="single_product?product_id=<?= $product['product_id'] ?>"><img class="img-fluid mb-3" src="assets/imgs/<?= $product['product_image']; ?>" /></a>
         <div class="star">
           <i class="fas fa-star"></i>
           <i class="fas fa-star"></i>
@@ -32,7 +32,7 @@ $products = app('db')->select(
           <h5 class="p-name"><?= $product['product_name']; ?></h5>
           <h4 class="p-price">$<?= $product['product_price']; ?></h4>
         </div>
-        <a class="btn shop-buy-btn" href="single_product.php?product_id=<?= $product['product_id']; ?>">Buy Now</a>
+        <a class="btn shop-buy-btn" href="single_product?product_id=<?= $product['product_id']; ?>">Buy Now</a>
       </div>
 
     <?php endforeach; ?>

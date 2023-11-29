@@ -4,7 +4,7 @@ include('layouts/header.php');
 
 
 if (app('login')->isLoggedIn()) {
-  redirect('account.php');
+  redirect('account');
 }
 ?>
 
@@ -38,7 +38,7 @@ if (app('login')->isLoggedIn()) {
         <input type="submit" class="btn" id="register-btn" name="register" value="Register" />
       </div>
       <div class="form-group">
-        <a id="login-url" href="login.php" class="btn" href="#">Already Have an Account? Login</a>
+        <a id="login-url" href="login" class="btn" href="#">Already Have an Account? Login</a>
       </div>
     </form>
   </div>

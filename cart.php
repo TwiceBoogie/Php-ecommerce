@@ -132,7 +132,7 @@ function calculateTotalCart()
                 <p><?php echo $value['product_name']; ?></p>
                 <small><span>$</span><?php echo $value['product_price']; ?></small>
                 <br>
-                <form method="POST" action="cart.php">
+                <form method="POST" action="cart">
                   <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>" />
                   <input type="submit" name="remove_product" class="remove-btn" value="remove" />
                 </form>
@@ -142,7 +142,7 @@ function calculateTotalCart()
 
           <td>
 
-            <form method="POST" action="cart.php">
+            <form method="POST" action="cart">
               <input type="hidden" name="product_id" value="<?php echo $value['product_id']; ?>" />
               <input type="number" min=0 name="product_quantity" value="<?php echo $value['product_quantity']; ?>" />
               <input type="submit" name="edit_quantity" value="edit" class="edit-btn" />
@@ -172,7 +172,7 @@ function calculateTotalCart()
 
   <div class="checkout-container">
 
-    <form method="POST" action="checkout.php">
+    <form method="POST" action="checkout">
       <input type="submit" value="Checkout" name="checkout" class="btn checkout-btn" />
     </form>
 

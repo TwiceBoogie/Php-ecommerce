@@ -15,7 +15,7 @@ if (isset($_GET['product_id'])) {
   // no product id was given
 } else {
 
-  header('location:index.php');
+  header('location: /');
 }
 ?>
 
@@ -48,7 +48,7 @@ if (isset($_GET['product_id'])) {
         <h3 class="py-4"><?= $item['product_name']; ?></h3>
         <h2><?= $item['product_price']; ?></h2>
 
-        <form method="POST" action="cart.php">
+        <form method="POST" action="cart">
           <input type="hidden" name="product_id" value="<?= $item['product_id']; ?>" />
           <input type="hidden" name="product_image" value="<?= $item['product_image']; ?>" />
           <input type="hidden" name="product_name" value="<?= $item['product_name']; ?>">

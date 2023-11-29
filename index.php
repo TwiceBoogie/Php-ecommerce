@@ -15,7 +15,7 @@ $mice = app('db')->select(
       <h5>Don't Just Grow...</h5>
       <h1><span>Evolve</span> Stay Ahead of the Competition!</h1>
       <p>Check out quaity products at the most affordable prices!</p>
-      <a href="shop.php"><button>Shop Now</button></a>
+      <a href="shop"><button>Shop Now</button></a>
     </div>
   </section>
 
@@ -28,7 +28,7 @@ $mice = app('db')->select(
         <img class="img-fluid" src="assets/imgs/one.jpg" />
         <div class="details">
           <h2>Keyboards</h2>
-          <a href="shop.php"><button class="text-uppercase">Show Now</button></a>
+          <a href="shop"><button class="text-uppercase">Show Now</button></a>
         </div>
       </div>
       <!--Two-->
@@ -36,7 +36,7 @@ $mice = app('db')->select(
         <img class="img-fluid" src="assets/imgs/two.jpg" />
         <div class="details">
           <h2>Mice</h2>
-          <a href="shop.php"><button class="text-uppercase">Show Now</button></a>
+          <a href="shop"><button class="text-uppercase">Show Now</button></a>
         </div>
       </div>
 
@@ -45,7 +45,7 @@ $mice = app('db')->select(
         <img class="img-fluid" src="assets/imgs/three.jpg" />
         <div class="details">
           <h2>Much More!</h2>
-          <a href="shop.php"><button class="text-uppercase">Show Now</button></a>
+          <a href="shop"><button class="text-uppercase">Show Now</button></a>
         </div>
       </div>
     </div>
@@ -62,7 +62,7 @@ $mice = app('db')->select(
 
       <?php foreach ($keyboards as $keyboard) : ?>
         <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-          <a href="single_product.php?product_id=<?= $keyboard['product_id']; ?>"><img class="img-fluid mb-3" src="assets/imgs/<?= $keyboard['product_image']; ?>" /></a>
+          <a href="single_product?product_id=<?= $keyboard['product_id']; ?>"><img class="img-fluid mb-3" src="assets/imgs/<?= $keyboard['product_image']; ?>" /></a>
           <div class="star">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -72,7 +72,7 @@ $mice = app('db')->select(
           </div>
           <h5 class="p-name"><?= $keyboard['product_name']; ?></h5>
           <h4 class="p-price">$<?= $keyboard['product_price']; ?></h4>
-          <a href="single_product.php?product_id=<?= $keyboard['product_id']; ?>"><button class="buy-btn">Buy Now</button></a>
+          <a href="single_product?product_id=<?= $keyboard['product_id']; ?>"><button class="buy-btn">Buy Now</button></a>
         </div>
       <?php endforeach; ?>
     </div>
@@ -83,7 +83,7 @@ $mice = app('db')->select(
     <div class="container">
       <h4>Good things are coming!</h4>
       <h1><br></h1>
-      <a href="shop.php"><button class="text-uppercase">Shop Now</button></a>
+      <a href="shop"><button class="text-uppercase">Shop Now</button></a>
     </div>
   </section>
 
@@ -98,7 +98,7 @@ $mice = app('db')->select(
 
       <?php foreach ($mice as $mouse) : ?>
         <div class="product text-center col-lg-3 col-md-4 col-sm-12">
-          <a href="single_product.php?product_id=<?= $mouse['product_id']; ?>"><img class="img-fluid mb-3" src="assets/imgs/<?= $mouse['product_image']; ?>" /></a>
+          <a href="single_product?product_id=<?= $mouse['product_id']; ?>"><img class="img-fluid mb-3" src="assets/imgs/<?= $mouse['product_image']; ?>" /></a>
           <div class="star">
             <i class="fas fa-star"></i>
             <i class="fas fa-star"></i>
@@ -108,7 +108,7 @@ $mice = app('db')->select(
           </div>
           <h5 class="p-name"><?= $mouse['product_name']; ?></h5>
           <h4 class="p-price">$<?= $mouse['product_price']; ?></h4>
-          <a href="single_product.php?product_id=<?= $mouse['product_id']; ?>"><button class="buy-btn">Buy Now</button></a>
+          <a href="single_product?product_id=<?= $mouse['product_id']; ?>"><button class="buy-btn">Buy Now</button></a>
         </div>
       <?php endforeach; ?>
     </div>

@@ -15,7 +15,7 @@ if (isset($_POST['order_details_btn']) && isset($_POST['order_id'])) {
     $order_total_price = calculateTotalOrderPrice($order_details);
 } else {
 
-    header('location: account.php');
+    header('location: account');
     exit;
 }
 
@@ -73,7 +73,7 @@ function calculateTotalOrderPrice($order_details)
     </table>
 
     <?php if ($order_status == "Not Paid") : ?>
-        <form style="float: right;" method="POST" action="payment.php">
+        <form style="float: right;" method="POST" action="payment">
             <input type="hidden" name="order_total_price" value="<?= $order_total_price; ?>" />
             <input type="hidden" name="order_status" value="<?= $order_status; ?>" />
             <input type="submit" name="order_pay_btn" class="btn btn-primary" value="Pay Now" />

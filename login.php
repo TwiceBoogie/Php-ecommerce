@@ -2,7 +2,7 @@
 include 'backend/Global.php';
 
 if (app('login')->isLoggedIn()) {
-  redirect('account.php');
+  redirect('account');
 }
 
 ?>
@@ -33,7 +33,7 @@ if (app('login')->isLoggedIn()) {
   <nav class="navbar navbar-expand-lg bg-white py-3 fixed-top">
     <div class="container">
       <!--Change Later if we want-->
-      <a href="index.php"><img class="logo" src="assets/imgs/logo.jpg"></a>
+      <a href="/"><img class="logo" src="assets/imgs/logo.jpg"></a>
       <!--<h2 class="brand">Evolve Tech</h2>-->
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -41,18 +41,18 @@ if (app('login')->isLoggedIn()) {
       <div class="collapse navbar-collapse nav-buttons" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link" href="index.php">Home</a>
+            <a class="nav-link" href="/">Home</a>
           </li>
 
           <li class="nav-item">
-            <a class="nav-link" href="shop.php">Shop</a>
+            <a class="nav-link" href="shop">Shop</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="contact.php">Contact Us</a>
+            <a class="nav-link" href="contact">Contact Us</a>
           </li>
           <li class="nav-item">
-            <a href="cart.php"><i class="fas fa-shopping-bag"></i></a>
-            <a href="account.php"><i class="fas fa-user"></i></a>
+            <a href="cart"><i class="fas fa-shopping-bag"></i></a>
+            <a href="account"><i class="fas fa-user"></i></a>
           </li>
         </ul>
       </div>

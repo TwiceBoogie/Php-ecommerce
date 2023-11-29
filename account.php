@@ -3,7 +3,7 @@
 include('layouts/header.php');
 
 if (!app('login')->isLoggedIn()) {
-  redirect('login.php');
+  redirect('login');
 }
 
 
@@ -23,7 +23,7 @@ $orders = app('db')->select($query, array('id' => $currentUser->id));
         <p>Name: <span><?= $currentUser->name ?></span></p>
         <p>Email: <span><?= $currentUser->email ?></span></p>
         <p><a href="#orders" id="orders-btn">Your Orders</a></p>
-        <p><a href="logout.php" id="logout-btn">Logout</a></p>
+        <p><a href="logout" id="logout-btn">Logout</a></p>
       </div>
     </div>
 
@@ -82,7 +82,7 @@ $orders = app('db')->select($query, array('id' => $currentUser->id));
           <span><?= $order['order_date']; ?></span>
         </td>
         <td>
-          <form method="POST" action="order_details.php">
+          <form method="POST" action="order_details">
             <input type="hidden" value="<?= $order['order_status']; ?>" name="order_status" />
             <input type="hidden" value="<?= $order['order_id']; ?>" name="order_id" />
             <input class="btn order-details-btn" name="order_details_btn" type="submit" value="Details" />
